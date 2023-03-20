@@ -1,0 +1,7 @@
+- better seperation between diff modules in your code
+- 2 roles 
+    - subject ->  does things and changes things and notifies observer of any changes happened
+    - observer -> 
+- Ex. Event management system ;  handle User Interface
+- use event system to seperate coupling 
+- ex. many event libraries in python. here. event.py

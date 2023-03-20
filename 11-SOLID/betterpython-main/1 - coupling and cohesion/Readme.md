@@ -1,0 +1,8 @@
+- Cohesion  
+    - Degree to which elements of certain class/function belong together. 
+    - clear responsibility , 1 task ex. Cosine fn in math library, code easier to reuse
+- Coupling 
+    - measure of how dependent 2 parts of your code are on each other
+    - high coupling bad as need to make changes multiple places
+    - ex. pass data directly to method or move function within object directly
+- Look for Information expert - where is the information that app uses centered

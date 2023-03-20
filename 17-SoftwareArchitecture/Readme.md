@@ -1,0 +1,13 @@
+- develop library for particular set of tasks  -> Software Architecture
+- Code Organization
+    - Lowest level -> syntax elements / solutions for specific problem (for vs while, store data in list vs array, sorting algo)
+    - Design Level -> Design principle and pattern - structure and organize everything (stratergy or observer pattern or code reduce coupling or single responsibility)
+    - Software architecture -> Top layer defines philosophy or approach of how code works or solves problem 
+    - ex. Django -> model view template architecture
+    - Model View Controller architecture 
+        - model deals with data
+        - view presentation of model in particular format
+        - controller logic that binds the two
+    - In example, controller depend on abstract class for model and view
+- model view controller is software architecture and within that have design principles included
+- pipeline is a software architecture to model processing sequences 

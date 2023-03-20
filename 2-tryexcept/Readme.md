@@ -1,0 +1,2 @@
+- Use try and except in Python (Other languages is try and catch)
+- try block of code, if error happens instead of crashing program, except block is executed

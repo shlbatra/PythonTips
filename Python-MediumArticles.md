@@ -1,0 +1,2 @@
+- Article with best Python OOP pratices
+    - https://medium.com/techtofreedom/10-remarkable-python-oop-tips-that-will-optimize-your-code-significantly-a47e4103b44d

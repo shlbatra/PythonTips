@@ -1,0 +1,4 @@
+- ex. Cust Support Software - change way tickets are processed depending on how busy it is or how many staff available.
+- ex. diff rendering algo based on vr headset used without changing code
+- use abstract class to implement it
+- use functional programming to implement it - functions

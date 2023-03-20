@@ -1,0 +1,30 @@
+from support.app import CustomerSupport
+from support.ticket import SupportTicket
+
+
+#with protocol, remove inheritance dependency
+#method matches protocol so its important
+class BlackHoleStrategy:
+    def create_ordering(self, tickets: list[SupportTicket]) -> list[SupportTicket]:
+        return []
+
+
+def main():
+    # create the application
+    app = CustomerSupport()
+
+    # create a few tickets
+    app.add_ticket(SupportTicket("John Smith", "My computer makes strange sounds!"))
+    app.add_ticket(
+        SupportTicket("Linus Sebastian", "I can't upload any videos, please help.")
+    )
+    app.add_ticket(
+        SupportTicket("Arjan Egges", "VSCode doesn't automatically solve my bugs.")
+    )
+
+    # process the tickets
+    app.process_tickets(BlackHoleStrategy())
+
+
+if __name__ == "__main__":
+    main()

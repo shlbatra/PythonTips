@@ -1,0 +1,3 @@
+- Python Namespace
+    - Way to organize multiple packages 
+    - if you don’t include at least an empty __init__.py file in your package, then your package becomes a namespace package.

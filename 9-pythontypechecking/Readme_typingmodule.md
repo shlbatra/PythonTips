@@ -1,0 +1,6 @@
+- Type Hints and Annotations for better documentation
+- typing module 
+    - Documentation Link -> https://docs.python.org/3/library/typing.html
+- allows to document code, add typing to args and return value from python
+- add types to all your python code 
+- use static code analysis to find type mismatching

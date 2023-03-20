@@ -1,0 +1,8 @@
+- Python Namespace Packages
+    - https://realpython.com/preview/python-namespace-package/
+-  if you don’t include at least an empty __init__.py file in your package, then your package becomes a namespace package.
+- A namespace is a way to group objects under a specific name. You can group values, functions, and other objects.
+- For example, when you import math, you gain access to the math namespace. Inside the math namespace, you can select from a whole host of different objects.
+- Namespace packages  combine whole packages instead of values or other Python objects.This allows you to have two independent packages on PyPI, for example, that still share the same namespace. 
+- Ex. the Microsoft Azure packages are all accessible, once installed, through the azure namespace
+- Namespace packages allow you to have multiple separate packages with their own packaging workflow, but they can all live in the same snake_corp namespace.

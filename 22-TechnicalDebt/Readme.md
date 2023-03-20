@@ -1,0 +1,28 @@
+- Software full code coverage, latest tech and 100$ future proof - not realistic with deadlines
+- Delibrate Tech Debt
+    - take some shortcuts for meeting deadlines -> leave few things for later on 
+- Accidental Tech Debt
+    - Outdated design -> future proof design and deliver to market soon, 
+    - full blown refactor might be required in case market feedback leads to outdated design
+    - prog lang evolve with time so change code
+    - library outdated
+- Bit Rot
+    - lots of incremental changes -> other people not understand design 
+    - more layering happen 
+- Manage tech debt 
+    - Design before code 
+        - make changes easy at this stage
+    - Code Review
+        - to avoid bit rot
+        - set of practices that team adheres to - team responsible
+    - Make Tech Debt Explicit
+        - Write as actual task as part of sprint plan
+        - add to backlog
+    - Leave room in sprint for debt
+        - spread time across for tech debt 
+        - do small quick refactors
+    - Prioritize debt items and note depedencies between them
+    - Use Metrics to manage tech debt
+        - code coverage for unit tests
+        - count tech debt cards and track progress
+        - number of bugs / issues 

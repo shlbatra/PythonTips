@@ -1,0 +1,7 @@
+- slow because dyanmically typed (compiled at run time via interpreter) vs java - statically typed(compiled before run), define type for var / methods beforehand - efficiency better compiling and allows optimizations and less checks. 
+- python - var change value and type at any pt in program, so cant compile before runtime and cant get optimizations beforehand. code compiled and checked at runtime.
+- lack of concurrency in python so not spread work across multiple threads. For each interpreter, we can have atmost 1 thread - so run on 1 core only even if we have multiple threads on CPU. Can use multiprocessing
+- Global interpreter lock -> Memory managed in python not thread safe, 2 threads access 1 object - run into issues. GIL - 1 thread run at a time to avoid this.Avoid locking and sharing memory
+- multiprocessing module -> run another GIL with own threads - hard to achive effectivily, setup shared memory object -> transfer memory between python interpreter but is hard to do. Java/C automatically runs on multi cores without defining much
+- Speed up using c code as extension on python library, python built on top of c, write algo in C and import it in Python code as extension
+- much faster to develop code and organize code. 

@@ -1,0 +1,7 @@
+{
+    "python.formatting.provider": "black",
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
