@@ -4,6 +4,7 @@
     [build-system]
     requires = ["setuptools"]
     build-backend = "setuptools.build_meta"
+<pre>
 - Ex.
     pyproject.toml
     [project]
@@ -36,9 +37,9 @@
             'importlib-metadata; python_version == "3.8"',
         ],
     )
-
-    - organize package as ->
-
+</pre>
+- organize package as ->
+<pre>
     mypackage
     ├── pyproject.toml  # and/or setup.cfg/setup.py (depending on the configuration method)
     |   # README.rst or README.md (a nice description of your package)
@@ -46,5 +47,6 @@
     └── mypackage
         ├── __init__.py
         └── ... (other Python files)
+</pre>
 
-    - Run command for build -> python -m build
+- Run command for build -> python -m build

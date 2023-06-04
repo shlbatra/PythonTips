@@ -12,66 +12,68 @@ Method	        Use a lowercase word or words. Separate words with underscores to
 Constant	    Use an uppercase single letter, word, or words. Separate words with underscores to improve readability.	        CONSTANT, MY_CONSTANT, MY_LONG_CONSTANT
 Module	        Use a short, lowercase word or words. Separate words with underscores to improve readability.	        module.py, my_module.py
 Package	        Use a short, lowercase word or words. Do not separate words with underscores.	        package, mypackage
-- The best way to name your objects in Python is to use descriptive names to make it clear what the object represents.
-Ex.
->>> # Not recommended                Recommended
->>> x = 'John Smith'                name = 'John Smith'
->>> y, z = x.split()                first_name, last_name = name.split()
->>> print(z, y, sep=', ')           print(last_name, first_name, sep=', ')
-'Smith, John'
-
-# Not recommended                   # Recommended
-def db(x):                          def multiply_by_two(x):
-    return x * 2                        return x * 2
-
-- Code Layout
-- Blank Lines
-    - Surround top-level functions and classes with two blank lines.
-    - Surround method definitions inside classes with a single blank line.
-    - Use blank lines sparingly inside functions to show clear steps.
-- Maximum Line Length and Line Breaking
-- Python will assume line continuation if code is contained within parentheses, brackets, or braces
+- The best way to name your objects in Python is to use descriptive names to make it clear what the object represents.<br>
+Ex.<br>
+<pre>
+    Not recommended                 Recommended <br>
+    x = 'John Smith'                name = 'John Smith' <br>
+    y, z = x.split()                first_name, last_name = name.split() <br>
+    print(z, y, sep=', ')           print(last_name, first_name, sep=', ') <br>
+</pre>
+<br>
+<pre>
+    Not recommended                    Recommended  <br>
+    def db(x):                          def multiply_by_two(x):  <br>
+        return x * 2                        return x * 2
+</pre>
+<br>
+- Code Layout<br>
+- Blank Lines<br>
+    - Surround top-level functions and classes with two blank lines.<br>
+    - Surround method definitions inside classes with a single blank line.<br>
+    - Use blank lines sparingly inside functions to show clear steps.<br>
+- Maximum Line Length and Line Breaking<br>
+- Python will assume line continuation if code is contained within parentheses, brackets, or braces<br>
 Ex. 
 def function(arg_one, arg_two,
-             arg_three, arg_four):
+             arg_three, arg_four):<br>
     return arg_one
-- Use backslash to break lines 
-from mypkg import example1, \
+- Use backslash to break lines <br>
+from mypkg import example1, \ <br>
     example2, example3
-- Break before Binary operator
-- Ex.
-# Recommended
+- Break before Binary operator<br>
+- Ex.<br>
+Recommended<br>
 total = (first_variable
          + second_variable
-         - third_variable)
+         - third_variable)<br>
 - Indentation
 - Tabs vs. Spaces
 - The indentation level of lines of code in Python determines how statements are grouped together.
     - Use 4 consecutive spaces to indicate indentation.
     - Prefer spaces over tabs.
-- If you’re using Python 3, you must be consistent with your choice. Otherwise, your code will not run.
-- Indentation Following Line Breaks
-1. align the indented block with the opening delimiter:
-Ex.
-def function(arg_one, arg_two,
-             arg_three, arg_four):
-    return arg_one
-
-x = 5
-if (x > 3 and
-        x < 10):
-    print(x)
-
-2. hanging indent. This is a typographical term meaning that every line but the first in a paragraph or statement is indented. 
-Ex.
-var = function(
-    arg_one, arg_two,
-    arg_three, arg_four)
-
-def function(
+- If you’re using Python 3, you must be consistent with your choice. Otherwise, your code will not run.<br>
+- Indentation Following Line Breaks<br>
+<pre>
+    1. align the indented block with the opening delimiter:
+    Ex.
+    def function(arg_one, arg_two,
+                arg_three, arg_four):
+        return arg_one
+    x = 5
+    if (x > 3 and
+            x < 10):
+        print(x)
+    2. hanging indent. This is a typographical term meaning that every line but the first in a paragraph or statement is indented. 
+    Ex.
+    var = function(
         arg_one, arg_two,
-        arg_three, arg_four):
-    return arg_one
+        arg_three, arg_four)
+    def function(
+            arg_one, arg_two,
+            arg_three, arg_four):
+        return arg_one
+</pre>
 
 - Where to Put the Closing Brace
 - Line up the closing brace with the first non-whitespace character of the previous line:
@@ -99,13 +101,11 @@ list_of_numbers = [
     - Start each line with a # followed by a single space.
     - Separate paragraphs by a line containing a single #.
 - Ex.
-def quadratic(a, b, c, x):
-    # Calculate the solution to a quadratic equation using the quadratic
-    # formula.
-    #
-    # There are always two solutions to a quadratic equation, x_1 and x_2.
-    x_1 = (- b+(b**2-4*a*c)**(1/2)) / (2*a)
-    x_2 = (- b-(b**2-4*a*c)**(1/2)) / (2*a)
+def quadratic(a, b, c, x):<br>
+    \# Calculate the solution to a quadratic equation using the quadratic formula.<br>
+    \# There are always two solutions to a quadratic equation, x_1 and x_2.<br>
+    x_1 = (- b+(b**2-4*a*c)**(1/2)) / (2*a)<br>
+    x_2 = (- b-(b**2-4*a*c)**(1/2)) / (2*a)<br>
     return x_1, x_2
 
 - Inline Comments
@@ -123,98 +123,89 @@ x = 5  # This is an inline comment
         - Surround docstrings with three double quotes on either side, as in """This is a docstring""".
         - Write them for all public modules, functions, classes, and methods.
         - Put the """ that ends a multiline docstring on a line by itself:
-- Ex. Google Style Doc String
-"""Gets and prints the spreadsheet's header columns
-
-Args:
-    file_loc (str): The file location of the spreadsheet
-    print_cols (bool): A flag used to print the columns to the console
-        (default is False)
-
-Returns:
-    list: a list of strings representing the header columns
-"""
-
-def fetch_smalltable_rows(
-    table_handle: smalltable.Table,
-    keys: Sequence[bytes | str],
-    require_all_keys: bool = False,
-) -> Mapping[bytes, tuple[str, ...]]:
-    """Fetches rows from a Smalltable.
-
-    Retrieves rows pertaining to the given keys from the Table instance
-    represented by table_handle.  String keys will be UTF-8 encoded.
+- Ex. Google Style Doc String<br>
+<pre>
+    """Gets and prints the spreadsheet's header columns
 
     Args:
-      table_handle:
-        An open smalltable.Table instance.
-      keys:
-        A sequence of strings representing the key of each table row to
-        fetch.  String keys will be UTF-8 encoded.
-      require_all_keys:
-        If True only rows with values set for all keys will be returned.
+        file_loc (str): The file location of the spreadsheet
+        print_cols (bool): A flag used to print the columns to the console
+            (default is False)
 
     Returns:
-      A dict mapping keys to the corresponding table row data
-      fetched. Each row is represented as a tuple of strings. For
-      example:
-
-      {b'Serak': ('Rigel VII', 'Preparer'),
-       b'Zim': ('Irk', 'Invader'),
-       b'Lrrr': ('Omicron Persei 8', 'Emperor')}
-
-      Returned keys are always bytes.  If a key from the keys argument is
-      missing from the dictionary, then that row was not found in the
-      table (and require_all_keys must have been False).
-
-    Raises:
-      IOError: An error occurred accessing the smalltable.
-    """
-
-class SampleClass:
-    """Summary of class here.
-
-    Longer class information...
-    Longer class information...
-
-    Attributes:
-        likes_spam: A boolean indicating if we like SPAM or not.
-        eggs: An integer count of the eggs we have laid.
-    """
-
-    def __init__(self, likes_spam: bool = False):
-        """Initializes the instance based on spam preference.
-
-        Args:
-          likes_spam: Defines if instance exhibits this preference.
+        list: a list of strings representing the header columns
+    """<br>
+    def fetch_smalltable_rows(
+        table_handle: smalltable.Table,
+        keys: Sequence[bytes | str],
+        require_all_keys: bool = False,
+    ) -> Mapping[bytes, tuple[str, ...]]:<br>
+        """Fetches rows from a Smalltable.
+        Retrieves rows pertaining to the given keys from the Table instance
+        represented by table_handle.  String keys will be UTF-8 encoded.<br>
+        Args:<br>
+        table_handle:<br>
+            An open smalltable.Table instance.
+        keys:<br>
+            A sequence of strings representing the key of each table row to
+            fetch.  String keys will be UTF-8 encoded.
+        require_all_keys:<br>
+            If True only rows with values set for all keys will be returned.
+        Returns:<br>
+        A dict mapping keys to the corresponding table row data
+        fetched. Each row is represented as a tuple of strings. For
+        example:<br>
+        {b'Serak': ('Rigel VII', 'Preparer'),
+        b'Zim': ('Irk', 'Invader'),
+        b'Lrrr': ('Omicron Persei 8', 'Emperor')}<br>
+        Returned keys are always bytes.  If a key from the keys argument is
+        missing from the dictionary, then that row was not found in the
+        table (and require_all_keys must have been False).<br>
+        Raises:
+        IOError: An error occurred accessing the smalltable.
         """
-        self.likes_spam = likes_spam
-        self.eggs = 0
 
-    def public_method(self):
-        """Performs operation blah."""
-
+    class SampleClass:<br>
+        """Summary of class here.<br>
+        Longer class information...<br>
+        Longer class information...<br>
+        Attributes:<br>
+            likes_spam: A boolean indicating if we like SPAM or not.<br>
+            eggs: An integer count of the eggs we have laid.<br>
+        """
+        def __init__(self, likes_spam: bool = False):<br>
+            """Initializes the instance based on spam preference.<br>
+            Args:<br>
+            likes_spam: Defines if instance exhibits this preference.<br>
+            """
+            self.likes_spam = likes_spam<br>
+            self.eggs = 0<br>
+        def public_method(self):<br>
+            """Performs operation blah."""
+</pre><br>
 - Whitespace in Expressions and Statements
 - Whitespace Around Binary Operators
         - Assignment operators (=, +=, -=, and so forth)
         - Comparisons (==, !=, >, <. >=, <=) and (is, is not, in, not in)
         - Booleans (and, not, or)
 - Note: When = is used to assign a default value to a function argument, do not surround it with spaces.
-- Ex.
-# Recommended
+- Ex.<br>
+Recommended <br>
 def function(default_parameter=5):
     # ...
 - it is better to only add whitespace around the operators with the lowest priority, especially when performing mathematical manipulation. Here are a couple examples:
+<pre>
 Ex.
-# Recommended
-y = x**2 + 5
-z = (x+y) * (x-y)
+Recommended <br>
+y = x**2 + 5 <br>
+z = (x+y) * (x-y) <br>
 
-# Recommended
-if x>5 and x%2==0:
-    print('x is larger than 5 and divisible by 2!')
-
+Recommended <br>
+if x>5 and x%2==0: <br>
+    print('x is larger than 5 and divisible by 2!') <br>
+</pre>
 - In slices, colons act as a binary operators.
+<pre>
 - Ex. 
 list[3:4]
 # Treat the colon as the operator with lowest priority
@@ -225,10 +216,11 @@ list[3:4:5]
 list[x+1 : x+2 : x+3]
 # The space is omitted if a slice parameter is omitted
 list[x+1 : x+2 :]
-
+</pre>
 - When to Avoid Adding Whitespace
 - The most important place to avoid adding whitespace is at the end of a line. This is known as trailing whitespace. 
 - Before a comma, semicolon, or colon:
+<pre>
 - Ex.
 x = 5
 y = 6
@@ -236,15 +228,17 @@ y = 6
 print(x, y)
 # Not recommended
 print(x , y)
-
+</pre>
 - Immediately inside parentheses, brackets, or braces:
+<pre>
 - Ex. 
 # Recommended
 my_list = [1, 2, 3]
 # Not recommended
 my_list = [ 1, 2, 3, ]
-
+</pre>
 - Before the open parenthesis that starts the argument list of a function call:
+<pre>
 Ex.
 def double(x):
     return x * 2
@@ -252,22 +246,25 @@ def double(x):
 double(3)
 # Not recommended
 double (3)
-
+</pre>
 - Before the open bracket that starts an index or slice:
+<pre>
 - Ex.
 # Recommended
 list[3]
 # Not recommended
 list [3]
-
+</pre>
 - Between a trailing comma and a closing parenthesis:
+<pre>
 - Ex.
 # Recommended
 tuple = (1,)
 # Not recommended
 tuple = (1, )
-
+</pre>
 - To align assignment operators:
+<pre>
 - Ex. 
 # Recommended
 var1 = 5
@@ -278,10 +275,12 @@ some_long_var = 7
 var1          = 5
 var2          = 6
 some_long_var = 7
+</pre>
 - There are other cases where PEP 8 discourages adding extra whitespace, such as immediately inside brackets, as well as before commas and colons. You should also never add extra whitespace in order to align operators.
 
 - Programming Recommendations
 - Don’t compare Boolean values to True or False using the equivalence operator (==).
+<pre>
 - Ex.
 # Not recommended
 my_bool = 6 > 5
@@ -290,9 +289,10 @@ if my_bool == True:
 # Recommended
 if my_bool:
     return '6 is bigger than 5'
-
+</pre>
 - Use the fact that empty sequences are falsy in if statements. 
 - Ex. in Python any empty list, string, or tuple is falsy. 
+<pre>
 # Not recommended
 my_list = []
 if not len(my_list):
@@ -301,8 +301,9 @@ if not len(my_list):
 my_list = []
 if not my_list:
     print('List is empty!')
-
+</pre>
 - Use is not rather than not ... is in if statements.
+<pre>
 - Ex.
 # Recommended
 if x is not None:
@@ -310,25 +311,28 @@ if x is not None:
 # Not recommended
 if not x is None:
     return 'x exists!'
-
+</pre>
 - Don’t use if x: when you mean if x is not None
 - Ex.A common mistake when checking if arg with default value None has been given a different value is to use the following:
+<pre>
 # Not Recommended
 if arg:
     # Do something with arg...
 # Recommended
 if arg is not None:
     # Do something with arg...
+</pre>
 - You could have set arg = []. As we saw above, empty lists are evaluated as falsy in Python. So, even though the argument arg has been assigned, the condition is not met, and so the code in the body of the if statement will not be executed.
 
 - Use .startswith() and .endswith() instead of slicing. 
+<pre>
 # Not recommended
 if word[:3] == 'cat':
     print('The word starts with "cat"')
 # Recommended
 if word.startswith('cat'):
     print('The word starts with "cat"')
-
+</pre>
 - When to Ignore PEP 8 -> NEVER
 - Exceptions to rule below:
         - If complying with PEP 8 would break compatibility with existing software
@@ -338,18 +342,23 @@ if word.startswith('cat'):
 - Tips and Tricks to Help Ensure Your Code Follows PEP 8
 - Linters
 - Linters are programs that analyze code and flag errors. They provide suggestions on how to fix the error. Linters are particularly useful when installed as extensions to your text editor, as they flag errors and stylistic problems while you write.
-- pycodestyle is a tool to check your Python code against some of the style conventions in PEP 8.
-- pip install pycodestyle
-- pycodestyle code.py
-- flake8 is a tool that combines a debugger, pyflakes, with pycodestyle
-- pip install flake8
-- flake8 code.py
-
+- pycodestyle is a tool to check your Python code against some of the style conventions in PEP 8.<br>
+<pre>
+    pip install pycodestyle
+    pycodestyle code.py
+</pre>
+- flake8 is a tool that combines a debugger, pyflakes, with pycodestyle<br>
+<pre>
+    pip install flake8
+    flake8 code.py
+</pre>
 - Autoformatters
 - Autoformatters are programs that refactor your code to conform with PEP 8 automatically. 
 - Once such program is black, which autoformats code following most of the rules in PEP 8.
-- pip install black
-- black --line-length=79 code.py
+<pre>
+    pip install black
+    black --line-length=79 code.py
+</pre>
 - Two other autoformatters, autopep8 and yapf, perform actions that are similar to what black does.
 
 

@@ -7,10 +7,13 @@
 - Iterate Through a Dictionary in Python
 - Iterating Through Keys Directly
 - To visualize the methods and attributes of any Python object, you can use dir()
+<pre>
 - Ex.
 >>> dir({})
 ['__class__', '__contains__', '__delattr__', ... , '__iter__', ...]
+</pre>
 - For mappings (like dictionaries), .__iter__() should iterate over the keys.
+<pre>
 - Ex.
 >>> a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 >>> for key in a_dict:
@@ -19,7 +22,9 @@
 color
 fruit
 pet
+</pre>
 - Iterating Through .items()
+<pre>
 - Ex.
 >>> a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 >>> d_items = a_dict.items()
@@ -32,33 +37,43 @@ dict_items([('color', 'blue'), ('fruit', 'apple'), ('pet', 'dog')])
 ('color', 'blue')
 ('fruit', 'apple')
 ('pet', 'dog')
+</pre>
 - Ex. unpack as tuple object
+<pre>
 >>> for key, value in a_dict.items():
 ...     print(key, '->', value)
 ...
 color -> blue
 fruit -> apple
 pet -> dog
+</pre>
 - Iterating Through .keys()
+<pre>
 - Ex.
 >>> a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 >>> keys = a_dict.keys()
 >>> keys
 dict_keys(['color', 'fruit', 'pet'])
+</pre>
 - Iterating Through .values()
+<pre>
 - Ex. 
 >>> a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 >>> values = a_dict.values()
 >>> values
 dict_values(['blue', 'apple', 'dog'])
+</pre>
 - You can do membership tests
+<pre>
 - Ex.
 >>> a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 >>> 'pet' in a_dict.keys()
 True
 >>> 'apple' in a_dict.values()
 True
+</pre>
 - Modifying Values and Keys
+<pre>
 - Ex.
 >>> prices = {'apple': 0.40, 'orange': 0.35, 'banana': 0.25}
 >>> for k, v in prices.items():
@@ -85,9 +100,10 @@ Traceback (most recent call last):
   File "<input>", line 1, in <module>
     for key in prices.keys():
 RuntimeError: dictionary changed size during iteration
-
+</pre>
 - Real-World Examples
 - Ex. 1 Turning Keys Into Values and Vice Versa
+<pre>
 >>> a_dict = {'one': 1, 'two': 2, 'thee': 3, 'four': 4}
 >>> new_dict = {}
 >>> for key, value in a_dict.items():
@@ -95,7 +111,9 @@ RuntimeError: dictionary changed size during iteration
 ...
 >>> new_dict
 {1: 'one', 2: 'two', 3: 'thee', 4: 'four'}
+</pre>
 - Ex. 2. Filtering Items
+<pre>
 >>> a_dict = {'one': 1, 'two': 2, 'thee': 3, 'four': 4}
 >>> new_dict = {}  # Create a new empty dictionary
 >>> for key, value in a_dict.items():
@@ -105,7 +123,9 @@ RuntimeError: dictionary changed size during iteration
 ...
 >>> new_dict
 {'one': 1, 'two': 2}
+</pre>
 - Ex. 3 Doing Some Calculations
+<pre>
 >>> incomes = {'apple': 5600.00, 'orange': 3500.00, 'banana': 5000.00}
 >>> total_income = 0.00
 >>> for value in incomes.values():
@@ -113,24 +133,35 @@ RuntimeError: dictionary changed size during iteration
 ...
 >>> total_income
 14100.0
-
+</pre>
 - Using Comprehensions
 -  they need two expressions separated with a colon followed by for and if (optional) clauses. When a dictionary comprehension is run, the resulting key-value pairs are inserted into a new dictionary in the same order in which they were produced.
 - Ex. two lists of data, and you need to create a new dictionary from them
+<pre>
 >>> objects = ['blue', 'apple', 'dog']
 >>> categories = ['color', 'fruit', 'pet']
 >>> a_dict = {key: value for key, value in zip(categories, objects)}
 >>> a_dict     ->   {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
+</pre>
 - Turning Keys Into Values and Vice Versa: Revisited
+<pre>
 - Ex. new_dict = {value: key for key, value in a_dict.items()}
+</pre>
 - Filtering Items: Revisited
+<pre>
 - Ex. new_dict = {k: v for k, v in a_dict.items() if v <= 2}
+</pre>
 - Doing Some Calculations: Revisited
+<pre>
 - Ex. total_income = sum([value for value in incomes.values()])
+</pre>
 - Better way to do above to save memory -  A generator expression is an expression that returns an iterator. It looks like a list comprehension, but instead of brackets you need to use parentheses to define it. generator expressions yield elements on demand so store 1 element at a time 
+<pre>
 - Ex. total_income = sum(value for value in incomes.values())   OR total_income = sum(incomes.values())
+</pre>
 - Removing Specific Items
 - Key-view objects also support common set operations. 
+<pre>
 - Ex. 
 >>> incomes = {'apple': 5600.00, 'orange': 3500.00, 'banana': 5000.00}
 >>> non_citric = {k: incomes[k] for k in incomes.keys() - {'orange'}}
@@ -143,11 +174,12 @@ RuntimeError: dictionary changed size during iteration
 >>> sorted_income = {k: incomes[k] for k in sorted(incomes)}
 >>> sorted_income
 {'apple': 5600.0, 'banana': 5000.0, 'orange': 3500.0}
-
+</pre>
 - Iterating in Sorted Order
 - When you call sorted(iterable), you get a list with the elements of iterable in sorted order.
 - Sorted by Keys
 - If you need to iterate through a dictionary in Python and want it to be sorted by keys, then you can use your dictionary as an argument to sorted().
+<pre>
 - Ex.
 >>> incomes = {'apple': 5600.00, 'orange': 3500.00, 'banana': 5000.00}
 >>> for key in sorted(incomes):
@@ -156,8 +188,10 @@ RuntimeError: dictionary changed size during iteration
 apple -> 5600.0
 banana -> 5000.0
 orange -> 3500.0
+</pre>
 - Sorted by Values
 - Use sorted() but with a second argument called key. The key keyword argument specifies a function of one argument that is used to extract a comparison key from each element you’re processing.
+<pre>
 - Ex. 
 >>> incomes = {'apple': 5600.00, 'orange': 3500.00, 'banana': 5000.00}
 >>> def by_value(item):
@@ -169,10 +203,14 @@ orange -> 3500.0
 ('orange', '->', 3500.0)
 ('banana', '->', 5000.0)
 ('apple', '->', 5600.0)
+</pre>
 - Alternate directly sort with values but return values only without keys 
+<pre>
 >>> for value in sorted(incomes.values()):
 ...     print(value)
+</pre>
 - Reversed
+<pre>
 - Ex.
 >>> incomes = {'apple': 5600.00, 'orange': 3500.00, 'banana': 5000.00}
 >>> for key in sorted(incomes, reverse=True):
@@ -181,15 +219,18 @@ orange -> 3500.0
 orange -> 3500.0
 banana -> 5000.0
 apple -> 5600.0
+</pre>
 - sorted() doesn’t really modify the order of the underlying dictionary. What really happen is that sorted() creates an independent list with its element in sorted order, so incomes remains the same:
 
 - Iterating Destructively With .popitem()
 - 
+<pre>
 - Ex.
 # File: dict_popitem.py
-
+</pre>
 - Iterating Destructively With .popitem()
 - .popitem(), which will remove and return an arbitrary key-value pair from a dictionary. On the other hand, when you call .popitem() on an empty dictionary, it raises a KeyError.
+<pre>
 - Ex. 
 a_dict = {'color': 'blue', 'fruit': 'apple', 'pet': 'dog'}
 while True:
@@ -201,10 +242,11 @@ while True:
     except KeyError:
         print('The dictionary has no item now...')
         break
-
+</pre>
 - Using Some of Python’s Built-In Functions
 - map()
 - Python’s map() is defined as map(function, iterable, ...) and returns an iterator that applies function to every item of iterable, yielding the results on demand.
+<pre>
 - Ex.
 >>> prices = {'apple': 0.40, 'orange': 0.35, 'banana': 0.25}
 >>> def discount(current_price):
@@ -223,10 +265,11 @@ while True:
 >>> low_price = list(filter(has_low_price, prices.keys()))
 >>> low_price
 ['orange', 'banana']
-
+</pre>
 - Using collections.ChainMap
 - ChainMap, which is a dictionary-like class for creating a single view of multiple mappings (like dictionaries). With ChainMap, you can group multiple dictionaries together to create a single, updateable view.
 - Ex.
+<pre>
 >>> from collections import ChainMap
 >>> fruit_prices = {'apple': 0.40, 'orange': 0.35}
 >>> vegetable_prices = {'pepper': 0.20, 'onion': 0.55}
@@ -240,10 +283,11 @@ pepper -> 0.2
 orange -> 0.35
 onion -> 0.55
 apple -> 0.4
-
+</pre>
 - Using itertools
 - Iteration tasks
 - Cyclic Iteration With cycle() ->  you can use itertools.cycle(iterable), which makes an iterator returning elements from iterable and saving a copy of each. When iterable is exhausted, cycle() returns elements from the saved copy. This is performed in cyclic fashion, so it’s up to you to stop the cycle.
+<pre>
 - Ex. 
 >>> from itertools import cycle
 >>> prices = {'apple': 0.40, 'orange': 0.35, 'banana': 0.25}
@@ -264,8 +308,10 @@ apple -> 0.4
 ('apple', 0.4)
 ('orange', 0.35)
 ('banana', 0.25)
+</pre>
 - Chained Iteration With chain()
 - chain(*iterables), which gets some iterables as arguments and makes an iterator that yields elements from the first iterable until it’s exhausted, then iterates over the next iterable and so on, until all of them are exhausted.
+<pre>
 - Ex.
 >>> from itertools import chain
 >>> fruit_prices = {'apple': 0.40, 'orange': 0.35, 'banana': 0.25}
@@ -279,9 +325,10 @@ apple -> 0.4
 ('pepper', 0.2)
 ('onion', 0.55)
 ('tomato', 0.42)
-
+</pre>
 - Using the Dictionary Unpacking Operator (**)
 - merge the two dictionaries into a new one and then iterate through it
+<pre>
 - Ex. 
 >>> fruit_prices = {'apple': 0.40, 'orange': 0.35}
 >>> vegetable_prices = {'pepper': 0.20, 'onion': 0.55}
@@ -296,4 +343,5 @@ pepper -> 0.2
 onion -> 0.55
 apple -> 0.4
 orange -> 0.35
+</pre>
 - if the dictionaries you’re trying to merge have repeated or common keys, then the values of the right-most dictionary will prevail
