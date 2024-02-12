@@ -1,0 +1,18 @@
+- Pandas
+- Dataframe
+    - Table with rows and cols
+- Series
+    - Single col of info
+- Use numpy array and dtypes to build pandas dataframe -> fast as built in c#
+- not have timezone aware of datetime -> so added in it pandas
+- period dtype -> timeseries (freq)
+- sparse matrix representation to store efficiently
+- type for interval
+- categorical types
+- store data as string or object type
+- use as type (convert dataframe from 1 type to another)
+    - df.astype("float32")
+    - df.astype({"a":"bool", "c":"float64"})
+    - pd.to_numeric(df)
+- string not very efficient for storage - due to duplication, use categorical for optimization (representations smaller than enteries)
+- 
