@@ -1,3 +1,4 @@
+# Use 1 image for download and compile , New image deployed to Production
 ## ------------------------------- Builder Stage ------------------------------ ## 
 FROM python:3.13-bookworm AS builder
 
@@ -32,6 +33,7 @@ WORKDIR /app
 
 COPY . .
 COPY --from=builder /app/.venv .venv
+# copy venv from staging docker file
 
 # Set up environment variables for production
 ENV PATH="/app/.venv/bin:$PATH"

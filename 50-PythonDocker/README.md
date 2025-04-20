@@ -119,7 +119,7 @@ docker run -p 8080:8080 08_bettercopy
 ```
 
 ### Build `Dockerfile.09_mountsecrets`
-If you run into problems here, run the following commands before in your terminal:
+If you run into problems here, run the following commands before in your terminal: (Passes the below mentioned variables to secret file in docker image)
 
 ```
 export DB_PASSWORD="mydbpassword"
@@ -163,6 +163,7 @@ docker build --secret id=DB_PASSWORD \
              --secret id=DB_HOST \
              --secret id=ACCESS_TOKEN_SECRET_KEY \
              --target=production \
+             -- no-cache \
              -f Dockerfile.10_final . -t 10_final
 ```
 **Running the image**

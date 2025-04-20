@@ -30,6 +30,7 @@ ENV ACCESS_TOKEN_SECRET_KEY=${ACCESS_TOKEN_SECRET_KEY}
 
 WORKDIR /app
 
+# copy only relevant part of code
 COPY /src src
 COPY --from=builder /app/.venv .venv
 
