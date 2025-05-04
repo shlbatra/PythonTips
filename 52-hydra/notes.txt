@@ -1,0 +1,14 @@
+Cohesion, Coupling and Configuration
+
+Why configuration settings hard ?
+- Add to lot of places ex. dataset path, experiment log path, url paths
+- Single place to define them
+- Store configuration place at one place then need many methods to pass them around - weak cohesion
+- If define global variables - lot of coupling if something is missing, then failures. 
+
+Solution
+- each defined locally where used in file -> settings all over the place and hard to find
+- Environmnet dotenv -> script access variables - change them without changing code. Not directly easy which ones you can change and no structure. Unrrelated
+variables together and what effect they will have
+- JSON / YAML file with specifications -> add structure - sub objects for different layers - use package hydra.
+

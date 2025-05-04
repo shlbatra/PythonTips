@@ -13,5 +13,6 @@ dependencies = [
     "tensorboard",
     "mlflow",
     "tqdm",
-    "pillow"
+    "pillow",
+    "hydra-core"
 ]

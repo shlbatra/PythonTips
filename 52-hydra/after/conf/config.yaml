@@ -1,6 +1,6 @@
 defaults:
-  - files: mnist
-  - _self_
+  - files: mnist # Provide default values for the files
+  - _self_ # Files preferential to the current directory
 paths:
   log: ./runs
   data: ${hydra:runtime.cwd}/../data/raw

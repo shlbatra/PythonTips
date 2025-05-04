@@ -9,14 +9,16 @@ from ds.models import LinearNet
 from ds.runner import Runner, run_epoch
 from ds.tracking import TensorboardExperiment
 
-cs = ConfigStore.instance()
+cs = ConfigStore.instance() # create an instance of ConfigStore - link config objects by Hydra with dataclasses
+# register the configuration schema with the config store
+# this allows hydra to know about the structure of the configuration
 cs.store(name="mnist_config", node=MNISTConfig)
 
 
-@hydra.main(config_path="conf", config_name="config")
-def main(cfg: MNISTConfig) -> None:
-    print(OmegaConf.to_yaml(cfg))
-
+@hydra.main(config_path="conf", config_name="config") # load config from conf/config.yaml
+def main(cfg: MNISTConfig) -> None: #load config as MNISTConfig object and leveraged from here. Hydra integrate with dataclasses.
+    #print(cfg.paths) # Print the paths from the configuration
+    print(OmegaConf.to_yaml(cfg)) # Instance of OmegaConf to print the configuration in YAML format
     # Model and Optimizer
     model = LinearNet()
     optimizer = torch.optim.Adam(model.parameters(), lr=cfg.params.lr)
@@ -24,9 +26,9 @@ def main(cfg: MNISTConfig) -> None:
     # Create the data loaders
 
     test_loader = create_dataloader(
-        batch_size=cfg.params.batch_size,
+        batch_size=cfg.params.batch_size, # access configs here
         root_path=cfg.paths.data,
-        data_file=cfg.files.test_data,
+        data_file=cfg.files.test_data, # need to provide path object - convert to accept str where convert to Path Object
         label_file=cfg.files.test_labels,
     )
     train_loader = create_dataloader(

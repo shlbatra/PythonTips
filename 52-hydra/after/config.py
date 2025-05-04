@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-
+# define structure of config file
 @dataclass
 class Paths:
     log: str
@@ -23,7 +23,7 @@ class Params:
 
 
 @dataclass
-class MNISTConfig:
+class MNISTConfig: # group of configuration settings
     paths: Paths
     files: Files
     params: Params
