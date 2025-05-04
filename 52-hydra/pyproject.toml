@@ -1,0 +1,17 @@
+[project]
+name = "name"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.9.6"
+dependencies = [
+    "torch",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "tensorboard",
+    "mlflow",
+    "tqdm",
+    "pillow"
+]
