@@ -1,7 +1,7 @@
 import logging
 import sqlite3
 
-
+# Use custom context manager to handle sqlite connection via Class entry and exit dundar methods
 class SQLite:
     def __init__(self, file_name: str):
         self.file_name = file_name

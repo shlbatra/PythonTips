@@ -2,7 +2,7 @@ import logging
 import sqlite3
 from contextlib import contextmanager
 
-
+# Use custom context manager to handle sqlite connection via decorator - Synchronous generator function
 @contextmanager
 def open_db(file_name: str):
     conn = sqlite3.connect(file_name)

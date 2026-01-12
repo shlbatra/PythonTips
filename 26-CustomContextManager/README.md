@@ -1,5 +1,7 @@
 # Building A Custom Context Manager In Python: A Closer Look
 
+https://www.youtube.com/watch?v=14z_Tf3p2Mw
+
 - Context managers in Python allow you to robustly control setup and teardown of resources. 
 - minimize the chance of you forgetting to do teardown especially in presence of exceptions
 - Ex. with to open a file. Good example of managing resources
