@@ -1,0 +1,16 @@
+[project]
+name = "ds-before"
+version = "0.1.0"
+description = "Data Science project - before refactoring"
+requires-python = ">=3.9"
+dependencies = [
+    "torch",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "tensorboard",
+    "mlflow",
+    "tqdm",
+    "pillow",
+]
