@@ -1,6 +1,7 @@
 from numbers import Real
 
 # Convert all types to Float
+# Make metrics dataclass -> turn class member variables to instance variables and simplify initialization and remove string representation/reset method
 class Metric:
     values: list[Real]
     running_total: float
