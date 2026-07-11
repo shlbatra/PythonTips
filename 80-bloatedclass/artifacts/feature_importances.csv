@@ -1,0 +1,14 @@
+feature,importance
+tenure,0.22451315278707437
+monthly_charges,0.19653213171093764
+support_tickets,0.1854770485717331
+charges_per_ticket,0.14628778738243256
+age,0.09318741368860309
+contract_type_yearly,0.03475295734394683
+contract_type_two_year,0.026949394707816095
+internet_service_fiber,0.022042050376537736
+payment_method_credit_card,0.01651876268656451
+is_new_customer,0.016319013928819865
+payment_method_paypal,0.013852478001794188
+is_senior,0.01200960127255768
+internet_service_none,0.011558207541182338
